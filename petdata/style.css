@@ -1,0 +1,91 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin:0;
+    padding:0;
+}
+body {
+    background: linear-gradient(90deg, rgb(248, 188, 208), rgb(114, 250, 216));
+    font-weight: 400;
+    padding: 20px 0 28px 0;
+    margin:0;
+}
+
+
+img {
+    max-width:100%;
+    height: auto;
+}
+
+.app-title {
+    color:palevioletred;
+    text-shadow: 2px 2px 5px #fff;
+    font-family: 'Poppins';
+    text-align: center;
+    font-weight:600;
+    font-size: 2.4rem;
+}
+.animal {
+    max-width:690px;
+    padding: 20px;
+    margin: 25px auto;
+    background-color: #fff;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, .1);
+    overflow:hidden;
+    cursor:default;
+}
+
+.animal h4 {
+    margin: .5rem auto;
+}
+
+.pet-photo {
+    float: left;
+    width:40%;
+    margin-right: 15px;
+
+}
+.pet-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 0 0 .25rem 0;
+
+}
+.pet-name:hover{
+    color: rgb(114, 234, 243);
+    text-shadow: 2px 2px 8px rgb(247, 179, 179);
+}
+.pet-name::before{
+    content: '❣ ';
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.pet-species {
+    font-style: italic;
+    font-size: .9rem;
+    color: darkolivegreen;
+    vertical-align: middle;
+}
+@counter-style foodlist {
+    system:fixed;
+    symbols: ♣ ♣ ♣ ♣ ♣ ♣ ♣;
+    suffix: " ";
+}
+.foods-list {
+    margin:0;
+    padding:0;
+    position: relative;
+    font-size: .85rem;
+    line-height: 1.5;
+    list-style-type: foodlist;
+    left:10px;
+}
+
+.footer {
+    font-size: .7rem;
+    color: #888;
+    text-align: center;
+    margin:0;
+}
