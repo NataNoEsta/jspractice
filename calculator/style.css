@@ -7,7 +7,7 @@
 
 body {
     padding:0;
-    margin:10px;
+    margin:0;
     background: linear-gradient(10deg, rgb(156, 187, 255),  rgb(255, 186, 198));
 }
 
@@ -44,7 +44,7 @@ body {
     align-content: center;
     grid-template-columns: repeat(4, 100px);
     /*minmax -> valores minimo y maximo*/
-    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    grid-template-rows: minmax(100px, auto) repeat(5, 100px);
     
 }
 
@@ -54,13 +54,22 @@ body {
     color:palevioletred;
     border:none;
     background-color: rgba(255, 255, 255, 0.4);
-    transition: background-color, color, 1.2s;
+    transition: color, 1.2s;
 }
 .calculator > button:hover {
     background-color: rgba(245, 245, 245, .8);
     color:rgb(142, 167, 236);
 }
 
+/* @keyframes change-color {
+    from { background:red; }
+    to { background: green }
+} */
+
 .big-b {
+    grid-row: span 2;
+    /* animation: change-color 2s ease 1s infinite; */
+}
+.big-a {
     grid-column: span 2;
 }
