@@ -22,7 +22,7 @@ body {
     padding:15px;
     text-align: right;
     overflow-x: hidden;
-    background: linear-gradient(120deg, rgb(248, 148, 148),rgba(91, 163, 231, 0.5));
+    background: rgba(152, 205, 255, 0.5);
 }
 .output > .pre-resultado {
     font-size: 1.25rem;
@@ -32,10 +32,10 @@ body {
 .resultado {
     text-shadow: none;
     margin:auto 0;
-    transition:text-shadow 1s;
+    transition:text-shadow .75s;
 }
 .resultado:hover {
-    text-shadow: 1px 1px 8px rgb(255, 255, 255, .6);
+    text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.6);
 }
 .calculator {
     display: grid;
