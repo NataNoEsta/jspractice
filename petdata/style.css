@@ -29,8 +29,8 @@ img {
     max-width:690px;
     padding: 20px;
     margin: 25px auto;
-    background-color: #fff;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, .1);
+    background-color: rgb(255, 255, 255, .5);
+    /* box-shadow: 3px 3px 3px rgba(0, 0, 0, .1); */
     overflow:hidden;
     cursor:default;
 }
@@ -39,11 +39,15 @@ img {
     margin: .5rem auto;
 }
 
+
 .pet-photo {
     float: left;
     width:40%;
     margin-right: 15px;
-
+    transition: transform .75s;
+}
+.pet-photo:hover{
+    transform: scale(90%);
 }
 .pet-name {
     font-size: 1.2rem;
@@ -53,11 +57,12 @@ img {
 
 }
 .pet-name:hover{
-    color: rgb(114, 234, 243);
+    color: rgb(255, 255, 255);
     text-shadow: 2px 2px 8px rgb(247, 179, 179);
+    transition: all .75s;
 }
 .pet-name::before{
-    content: '❣ ';
+    content: ' ❣ ';
     font-size: 1rem;
     font-weight: 300;
 }
