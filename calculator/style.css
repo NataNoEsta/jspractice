@@ -54,7 +54,7 @@ body {
     color:palevioletred;
     border:none;
     background-color: rgba(255, 255, 255, 0.4);
-    transition: color, 1.2s;
+    transition: color ease-in-out .3s;
 }
 .calculator > button:hover {
     background-color: rgba(245, 245, 245, .8);
@@ -62,13 +62,13 @@ body {
 }
 
 /* @keyframes change-color {
-    from { background:red; }
-    to { background: green }
+    from { background:rgb(199, 188, 188); }
+    to { background: rgb(191, 224, 191) }
 } */
 
 .big-b {
     grid-row: span 2;
-    /* animation: change-color 2s ease 1s infinite; */
+    /* animation: change-color .8s ease .6s infinite; */
 }
 .big-a {
     grid-column: span 2;

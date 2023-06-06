@@ -49,11 +49,16 @@ input[type="text"] {
 }
 body {
   width: 100%;
-  max-width: 68rem;
+  max-width: 52rem;
   margin: 0 auto;
   font: 1.5rem Arial, sans-serif;
   background-color: whitesmoke;
   color: whitesmoke;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 @media screen and (min-width: 620px) {
   body {
@@ -67,21 +72,25 @@ body {
   display: inline-block;
   margin-top: 2rem;
   border: #ff9a9a solid 1px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
 }
 .btn {
   padding: 10px 8px;
   border: 1px solid #ff9a9a;
   cursor: pointer;
+  max-width:180px;
   text-transform: capitalize;
-  border-radius: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
 }
 .btn.toggle-btn {
   border-width: 1px;
-  border-color: #d3d3d3;
+  border-color: #d1d1d1;
 }
 .btn.toggle-btn[aria-pressed="true"] {
   text-decoration: underline;
-  border-color: rgb(162, 238, 238);
+  border-color: #eb7171;
+
 }
 .btn__danger {
   color: whitesmoke;
@@ -97,7 +106,9 @@ body {
 }
 .btn-group {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: nowrap;
+  justify-items: center;
+  align-items: center;
 }
 .btn-group > * {
   flex: 1 1 49%;
@@ -120,8 +131,8 @@ body {
   white-space: nowrap;
 }
 [class*="stack"] > * {
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: .2rem;
+  margin-bottom: .2rem;
 }
 .stack-small > * + * {
   margin-top: 1.25rem;
@@ -131,7 +142,7 @@ body {
 }
 @media screen and (min-width: 550px) {
   .stack-small > * + * {
-    margin-top: 1.4rem;
+    margin-top: 0;
   }
   .stack-large > * + * {
     margin-top: 2.8rem;
@@ -142,11 +153,19 @@ body {
 }
 /* END GLOBAL STYLES */
 .todoapp {
+  display: flex;
+  flex-direction: column;
   background: linear-gradient(120deg, rgb(253, 183, 183), rgb(176, 217, 255));
-  margin: 2rem 0 4rem 0;
-  padding: 1rem;
+  margin: 2rem 0 2rem 0;
+  padding: 4rem;
   position: relative;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2.5rem 5rem 0 rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 426px) {
+  .stack-large {
+    margin: 1rem 0 1rem 0;
+    padding:3rem;
+  }
 }
 @media screen and (min-width: 550px) {
   .todoapp {
@@ -155,8 +174,8 @@ body {
 }
 .todoapp > * {
   max-width: 50rem;
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto;
+  margin-right: auto; */
 }
 .todoapp > form {
   max-width: 100%;
@@ -192,14 +211,14 @@ body {
 }
 @media screen and (min-width: 620px) {
   [class*="__lg"] {
-    font-size: 2.4rem;
+    font-size: 2rem;
   }
 }
 /* Todo item styles */
 .todo {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 .todo > * {
   flex: 1 1 100%;
