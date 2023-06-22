@@ -1,12 +1,13 @@
-import React from "react";
+import { Button } from "react-bootstrap";
 
-function FilterButton(props) {
+const FilterButton = () => {
     return (
-        <button type="button" className="btn toggle-btn" aria-pressed="true">
+      
+        <Button variant="outline-primary">
         <span className="visually-hidden">Show </span>
         <span>all</span>
         <span className="visually-hidden"> tasks</span>
-      </button>
+      </Button>
 
     )
 }

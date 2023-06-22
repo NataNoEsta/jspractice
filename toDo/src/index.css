@@ -3,9 +3,17 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  --global-pinkish: #ff9a9a;
+  --globa-pinkish-02: #ff9a9a81;
+  --global-pink01: #eeaef0;
+  --global-blueish: rgb(176, 217, 255);
+}
+div#root {
+  display: flex;
+  height: 100vh;
 }
 *:focus {
-  outline: 1px solid #228bec;
+  outline: 1px solid var(--global-pink01);
   outline-offset: 2;
 }
 html {
@@ -24,7 +32,7 @@ button {
   padding: 0;
   width: auto;
   overflow: hidden;
-  color:rgb(155, 212, 193);
+  color: var(--global-blueish);
   font: inherit;
   line-height: normal;
   -webkit-font-smoothing: inherit;
@@ -45,12 +53,15 @@ button, input {
 }
 input[type="text"] {
   border-radius: 10px;
-  border: 1px solid rgb(255, 170, 170, .75);
+  border: 1px solid var(--global-pinkish);
 }
 body {
   width: 100%;
+  display: flex;
   max-width: 52rem;
-  margin: 0 auto;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
   font: 1.5rem Arial, sans-serif;
   background-color: whitesmoke;
   color: whitesmoke;
@@ -71,39 +82,36 @@ form {
 .form-group > input[type="text"] {
   display: inline-block;
   margin-top: 2rem;
-  border: #ff9a9a solid 1px;
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+  border: var(--global-pink01) solid 1px;
+
 }
 .btn {
-  padding: 10px 8px;
-  border: 1px solid #ff9a9a;
   cursor: pointer;
-  max-width:180px;
   text-transform: capitalize;
   border-radius: 8px;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
-}
+}/*
 .btn.toggle-btn {
   border-width: 1px;
   border-color: #d1d1d1;
-}
+} 
 .btn.toggle-btn[aria-pressed="true"] {
   text-decoration: underline;
   border-color: #eb7171;
 
-}
+} */
 .btn__danger {
   color: whitesmoke;
   background-color: #eb7171;
   border-color: whitesmoke;
 }
 .btn__filter {
-  border-color: #ff9a9a;
-}
+  border-color: #ff9a9a !;
+} 
 .btn__primary {
   color: inherit;
   background-color:rgb(150, 233, 215);
-}
+} 
 .btn-group {
   display: flex;
   flex-wrap: nowrap;
@@ -111,16 +119,16 @@ form {
   align-items: center;
 }
 .btn-group > * {
-  flex: 1 1 49%;
+  flex: 1 1 100%;
 }
 .btn-group > * + * {
   margin-left: 1rem;
 }
-.label-wrapper {
+/* .label-wrapper {
   margin: 0;
   flex: 0 0 100%;
   text-align: center;
-}
+} */
 .visually-hidden {
   position: absolute !important;
   height: 1px;
@@ -134,10 +142,10 @@ form {
   margin-top: .2rem;
   margin-bottom: .2rem;
 }
-.stack-small > * + * {
+.stack-small {
   margin-top: 1.25rem;
-}
-.stack-large > * + * {
+} 
+.stack-large  {
   margin-top: 2.5rem;
 }
 @media screen and (min-width: 550px) {
@@ -155,7 +163,7 @@ form {
 .todoapp {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(120deg, rgb(253, 183, 183), rgb(176, 217, 255));
+  background: linear-gradient(120deg, var(--global-pinkish), rgb(176, 217, 255));
   margin: 2rem 0 2rem 0;
   padding: 4rem;
   position: relative;
@@ -196,7 +204,7 @@ form {
 }
 .input__lg {
   padding: 2rem;
-  border: 2px solid #ff9a9a;
+  border: 2px solid var(--global-pinkish);
 }
 .input__lg:focus {
   border-color: #f19c9c;
