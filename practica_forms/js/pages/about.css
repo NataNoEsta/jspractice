@@ -1,0 +1,14 @@
+.article-main {
+    display: flex;
+    padding: 2rem;
+}
+.article-sub {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+img {
+    max-width: 250px;
+    padding: 1rem;
+}

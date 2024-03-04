@@ -42,7 +42,7 @@ class Calculadora {
         if(isNaN(prev) || isNaN(current)) {
             return
         }
-        switch(this.operation) {
+        switch(operation) {
             case '+':
                 calc = prev + current
                 console.log(calc)
@@ -109,4 +109,9 @@ equalButton.addEventListener("click", () => {
 clearAll.addEventListener('click', (button)=> {
     calculator.clear()
     calculator.update()
+})
+clearButton.addEventListener('click', (button) => {
+    calculator.borrar()
+    calculator.update()
+
 })
