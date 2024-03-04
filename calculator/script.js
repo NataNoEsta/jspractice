@@ -7,12 +7,12 @@ class Calculadora {
     }
     // métodos
     clear() {
-        this.currentResult = ''
-        this.prevResult = ''
-        this.operation = undefined
+        this.currentResult = '';
+        this.prevResult = '';
+        this.operation = '';
     }
     borrar() {
-
+        this.currentResult = "";
     }
     appendNum(number) {
         // if (number === '.' && this.currentResult.includes('.')) {
@@ -23,25 +23,29 @@ class Calculadora {
     }
 
     selectOp(op) {
-        if (this.currentResult === "") {
-            return
-        }else if(this.prevResult !== "") {
-            this.calcular()
-        }
-        this.op = op
+        this.operation = op
         this.prevResult = this.currentResult
         this.currentResult = ''
+        console.log(op)
+        if (this.currentResult === "") {
+            return
+        }else {
+            this.calcular()
+        }
+        
     }
     calcular(){
-        let calc;
+        let calc = 0;
         let prev = parseFloat(this.prevResult)
         let current = parseFloat(this.currentResult)
+        let operation = this.operation
         if(isNaN(prev) || isNaN(current)) {
             return
         }
         switch(this.operation) {
             case '+':
                 calc = prev + current
+                console.log(calc)
                 break
             case "-":
                 calc = prev - current
@@ -60,13 +64,14 @@ class Calculadora {
                 return
         }
         this.currentResult = calc
-        this.operation = operation
-        this.prevResult = undefined
+        // this.operation = operation
+        this.prevResult = " "
         console.log(calc)
     }
     update() {
-        this.currentResultText.innerText = this.currentResult
-        this.prevResultText.innerText = this.prevResult
+        
+        currentResultText.innerText = this.currentResult
+        prevResultText.innerText = this.prevResult
     }
 }
 
@@ -80,7 +85,7 @@ const clearAll = document.querySelector('[data-clear-all]')
 const clearButton = document.querySelector('[data-clear]')
 const prevResultText = document.querySelector('[data-pre-result]')
 const currentResultText = document.querySelector('[data-result]')
-console.log(equalButton)
+
 //se crea una instancia de la clase Calculadora
 const calculator = new Calculadora(prevResultText, currentResultText)
 
@@ -93,11 +98,11 @@ numberButtons.forEach(button => {
 })
 operationButtons.forEach(button => {
     button.addEventListener("click", (button) => {
-        calculator.selectOp(button.innerText)
+        calculator.selectOp(button.target.innerText)
         calculator.update()
     })
 })
-equalButton.addEventListener("click", (button) => {
+equalButton.addEventListener("click", () => {
     calculator.calcular()
     calculator.update()
 })
