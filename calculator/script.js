@@ -45,7 +45,7 @@ class Calculadora {
         switch(operation) {
             case '+':
                 calc = prev + current
-                console.log(calc)
+                // console.log(calc)
                 break
             case "-":
                 calc = prev - current
@@ -66,10 +66,9 @@ class Calculadora {
         this.currentResult = calc
         // this.operation = operation
         this.prevResult = " "
-        console.log(calc)
+        // console.log(calc)
     }
     update() {
-        
         currentResultText.innerText = this.currentResult
         prevResultText.innerText = this.prevResult
     }
